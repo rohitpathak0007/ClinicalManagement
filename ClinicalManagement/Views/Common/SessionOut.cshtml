@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/Exception_Layout.cshtml";
+}
+<style>
+    body {
+        background-color: #e5e5e5;
+    }
+
+    .breadcrumb {
+        background-color: #e5e5e5;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+</style>
+<div class="container" data-unhandle="@Url.Action("SSOSessionOut", "Common")">
+    <div>
+        <div id="paging_container4">
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            PFMS Session Expired
+                        </div>
+                        <div class="panel-body">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <h4>Sorry, Your current session is expired due to inactivity, Please relogin to access application.</h4>
+                                    @Html.ActionLink("Click here to continue with Medicio", "Index", "Customer")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

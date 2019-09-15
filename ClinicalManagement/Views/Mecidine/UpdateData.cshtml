@@ -1,0 +1,96 @@
+﻿@{
+    Layout = "~/Views/Shared/Customer_Layout.cshtml";
+}
+
+@model Model.MecidineModel
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnBack').click(function () {
+            $('#frmHome').submit();
+        });
+
+        //$('#btnUpdate').click(function () {
+        //    $('#frmUpdate').submit();
+        //});
+
+    });
+
+</script>
+<form method="post" action="~/Mecidine/Index" id="frmHome"></form>
+<div>
+    <div class="fl col-md-12">
+        <div class="portlet-body">
+
+            <h3 class="page-title">Edit Mecidine</h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<br />
+<div class="clearfix"></div>
+
+@using (Html.BeginForm("UpdateData", "Mecidine", FormMethod.Post))
+{ 
+<div class="row">
+    <div class="col-sm-12">
+        <div id="dvSccessFail">
+            @Html.Partial("_SuccessFail")
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="" class="row clearfix">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Mecidine ID</label>
+                            @Html.TextBoxFor(m => m.MEDID, new { @class = "form-control",@readyonly = true})
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Mecidine Name</label>
+                            @Html.TextBoxFor(m => m.MEDName, new { @class = "form-control"})
+                           <span style="color: red"> @Html.ValidationMessageFor(m=> m.MEDName,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Mecidine Price</label>
+                            @Html.TextBoxFor(m => m.MEDPrice, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.MEDPrice,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Quantity</label>
+                            @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control"})
+                           <span style="color: red">  @Html.ValidationMessageFor(m=> m.Quantity,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">IsAvailable</label>
+                            @Html.DropDownListFor(m => m.IsAvailable, new List<SelectListItem> { new SelectListItem{Text="Yes", Value="1" },
+                       new SelectListItem{Text="No",Value="0"}}, new { @class = "form-control" })
+                           <span style="color: red">  @Html.ValidationMessageFor(m=> m.IsAvailable,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                <br />
+               <table>
+                        <tr>
+                            <td>
+                                <a id="btnBack" class="btn btn-skin btn-block">Back</a>
+                            </td>
+                            <td width="2%"></td>
+                            <td>
+                                <input type="submit" value="Update" id="btnUpdate" class="btn btn-skin btn-block" />
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+}

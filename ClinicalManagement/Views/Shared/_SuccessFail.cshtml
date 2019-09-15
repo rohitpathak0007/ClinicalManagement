@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Master";
+}
+
+<div class="portlet-body form">
+    <div class="form-horizontal">
+        @if (@ViewBag.MFlag == "F")
+        {
+            
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>               
+                @Html.Raw(@ViewBag.message)
+            </div>
+        }
+        else if (@ViewBag.MFlag == "S")
+        {
+            <div data-class="alert-success" class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                @Html.Raw(@ViewBag.message)
+            </div>
+        }
+        else if (@ViewBag.MFlag == "E")
+        {
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                You have some form errors. Please check error.
+                @Html.Raw(@ViewBag.message)
+            </div>
+        }
+    </div>
+</div>

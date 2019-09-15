@@ -1,0 +1,62 @@
+﻿@model Model.CustomerModel
+
+@using (Html.BeginForm("Index", "Customer", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)  
+    <div class="col-md-6" id="Appointment">
+        <div class="form-wrapper">
+            <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+
+                <div class="panel panel-skin">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span>Make an appoinment <small>(It's free!)</small></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+
+                        <form action="" method="post" role="form" class="contactForm lead">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control input-md" })
+                                        <span style="color: red">@Html.ValidationMessageFor(x => x.FirstName, null, new { @class = "valMsgForFName" })</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control input-md" })
+                                        <span style="color: red">@Html.ValidationMessageFor(x => x.LastName, null, new { @class = "valMsgForFName" })</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control input-md" })
+                                        <span style="color: red">@Html.ValidationMessageFor(x => x.EmailId, null, new { @class = "valMsgForFName" })</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone number</label>
+                                        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control input-md" })
+                                        <span style="color: red">@Html.ValidationMessageFor(x => x.PhoneNumber, null, new { @class = "valMsgForFName" })</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Submit" class="btn btn-skin btn-block btn-lg">
+                            <p class="lead-footer">* We'll contact you by phone & email later</p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

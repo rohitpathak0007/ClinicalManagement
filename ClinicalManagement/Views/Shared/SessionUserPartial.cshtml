@@ -1,0 +1,75 @@
+﻿@model Model.UserModel
+<style type="text/css">
+    span:hover {
+        color: whitesmoke;
+    }
+</style>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <p class="bold text-right">
+                        <div class="top-menu">
+                            <ul class="nav navbar-nav pull-right">
+                                <li class="dropdown dropdown-user"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
+                                    data-hover="dropdown" data-close-others="true"><span
+                                        class="username">Welcome @Model.UserName </span><i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-default">
+                                        @*  <ul class="userdescp">
+                            <li><a>Name: @Model.UserName</a></li>
+                            <li><a>Type: @Model.UserType</a></li>
+                        </ul>*@
+                                        <li class="hide"><a href="#"><i class="icon-user"></i>Change Password</a></li>
+                                        <li><a href="@Url.Action("LogOut", "Customer")"><i class="icon-key"></i>Log Out </a></li>
+                                    </ul>
+                                </li>
+                                <!-- END USER LOGIN DROPDOWN -->
+                                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container navigation">
+
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand">
+                <img src="~/Script/bootstrap/img/logo.png" alt="Loading" width="150" height="40" />
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                @if (Model.UserTypeValue == 1)
+                { 
+                    <li class="active"><a href="~/Home/Index">Home</a></li>
+                    <li><a href="~/Doctor/Index">Doctors</a></li>
+                    <li><a href="~/Home/Home">Patient</a></li>
+                    <li><a href="/Mecidine/Index">Mecidine</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home CTA</a></li>
+                            <li><a href="index-form.html">Home Form</a></li>
+                            <li><a href="index-video.html">Home video</a></li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

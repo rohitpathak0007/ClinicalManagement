@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Medicio landing page template for Health niche</title>
+
+    <link href="~/Script/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Script/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/plugins/cubeportfolio/css/cubeportfolio.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/owl.theme.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/css/style.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/bodybg/bg1.css" rel="stylesheet" />
+    <link href="~/Script/bootstrap/color/default.css" rel="stylesheet" />
+    <link href="~/Script/Datatable/Datatable.css" rel="stylesheet" />
+    <link href="~/Script/CSS3/CSS3.css" rel="stylesheet" />
+    <script src="~/Script/bootstrap/js/jquery.min.js"></script>
+    <script src="~/Script/Datatable/Datatables_min.js"></script>
+
+
+    @*<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> *@
+    @*<script src="~/Script/bootstrap/js/custom.js"></script>*@
+
+    @* <link href="~/Script/assets/global/plugins/select2/select2.css" rel="stylesheet" />
+    <link href="~/Script/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Script/assets/global/plugins/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/Script/assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet" />*@
+    <!-- css -->
+    @* <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
+	<link href="css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen" />
+	<link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">*@
+
+    <!-- boxed bg -->
+    @*<link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />
+	<!-- template skin -->
+	<link id="t-colors" href="color/default.css" rel="stylesheet">*@
+
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    
+    @Html.Action("SessionUserPartial", "Common")
+
+    <div class="intro-content" style="background-color: white ! important; background-image: none">
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="widget">
+                            <h5>About Medicio</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, ne nam purto nihil impetus, an facilisi accommodare sea
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="widget">
+                            <h5>Information</h5>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Laboratory</a></li>
+                                <li><a href="#">Medical treatment</a></li>
+                                <li><a href="#">Terms & conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="widget">
+                            <h5>Medicio center</h5>
+                            <p>
+                                Nam leo lorem, tincidunt id risus ut, ornare tincidunt naqunc sit amet.
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                                    </span>Monday - Saturday, 8am to 10pm
+                                </li>
+                                <li>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                                    </span>+62 0888 904 711
+                                </li>
+                                <li>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                    </span>hello@medicio.com
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="widget">
+                            <h5>Our location</h5>
+                            <p>The Suithouse V303, Kuningan City, Jakarta Indonesia 12940</p>
+
+                        </div>
+                    </div>
+                    <div class="wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="widget">
+                            <h5>Follow us</h5>
+                            <ul class="company-social">
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                                <li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="wow fadeInLeft" data-wow-delay="0.1s">
+                            <div class="text-left">
+                                <p>&copy;Copyright - Medicio Theme. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="wow fadeInRight" data-wow-delay="0.1s">
+                            <div class="text-right">
+                                <div class="credits">
+                                    <!-- 
+                                    All the links in the footer should remain intact. 
+                                    You can delete the links only if you purchased the pro version.
+                                    Licensing information: https://bootstrapmade.com/license/
+                                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medicio
+                                -->
+                                    @*<a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function (factory) {
+            if (typeof define === 'function' && define.amd) {
+                // AMD
+                define(['jquery', 'datatables.net'], function ($) {
+                    return factory($, window, document);
+                });
+            }
+            else if (typeof exports === 'object') {
+                // CommonJS
+                module.exports = function (root, $) {
+                    if (!root) {
+                        root = window;
+                    }
+
+                    if (!$ || !$.fn.dataTable) {
+                        $ = require('datatables.net')(root, $).$;
+                    }
+
+                    return factory($, root, root.document);
+                };
+            }
+            else {
+                // Browser
+                factory(jQuery, window, document);
+            }
+        }(function ($, window, document, undefined) {
+            'use strict';
+
+            // Unique value allowing multiple absolute ordering use cases on a single page.
+            var _unique = 0;
+
+            // Function to encapsulate code that is common to both the string and number
+            // ordering plug-ins.
+            var _setup = function (values) {
+                if (!$.isArray(values)) {
+                    values = [values];
+                }
+
+                var o = {
+                    name: 'absoluteOrder' + (_unique++),
+                    alwaysTop: {},
+                    alwaysBottom: {}
+                };
+
+                // In order to provide performance, the symbols that are to be looked for
+                // are stored as parameter keys in an object, allowing O(1) lookup, rather
+                // than O(n) if it were in an array.
+                for (var i = 0, ien = values.length ; i < ien ; i++) {
+                    var conf = values[i];
+
+                    if (typeof conf === 'string') {
+                        o.alwaysTop[conf] = true;
+                    }
+                    else if (conf.position === undefined || conf.position === 'top') {
+                        o.alwaysTop[conf.value] = true;
+                    }
+                    else {
+                        o.alwaysBottom[conf.value] = true;
+                    }
+                }
+
+                // Ascending ordering method
+                o.asc = function (a, b, isNumber) {
+                    if (o.alwaysTop[a] || o.alwaysBottom[b]) {
+                        return -1;
+                    }
+                    else if (o.alwaysBottom[a] || o.alwaysTop[b]) {
+                        return 1;
+                    }
+
+                    if (isNumber) {
+                        // Cast as a number if required
+                        if (typeof a === 'string') {
+                            a = a.replace(/[^\d\-\.]/g) * 1;
+                        }
+                        if (typeof b === 'string') {
+                            b = b.replace(/[^\d\-\.]/g) * 1;
+                        }
+                    }
+
+                    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+                };
+
+                // Descending ordering method
+                o.desc = function (a, b, isNumber) {
+                    if (o.alwaysTop[a] || o.alwaysBottom[b]) {
+                        return -1;
+                    }
+                    else if (o.alwaysBottom[a] || o.alwaysTop[b]) {
+                        return 1;
+                    }
+
+                    if (isNumber) {
+                        if (typeof a === 'string') {
+                            a = a.replace(/[^\d\-\.]/g) * 1;
+                        }
+                        if (typeof b === 'string') {
+                            b = b.replace(/[^\d\-\.]/g) * 1;
+                        }
+                    }
+
+                    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+                };
+
+                return o;
+            };
+
+            // String based ordering
+            $.fn.dataTable.absoluteOrder = function (values) {
+                var conf = _setup(values);
+
+                $.fn.dataTable.ext.type.order[conf.name + '-asc'] = conf.asc;
+                $.fn.dataTable.ext.type.order[conf.name + '-desc'] = conf.desc;
+
+                // Return the name of the sorting plug-in that was created so it can be used
+                // with the `columns.type` parameter. There is no auto-detection here.
+                return conf.name;
+            };
+
+            // Number based ordering - strips out everything but the number information
+            $.fn.dataTable.absoluteOrderNumber = function (values) {
+                var conf = _setup(values);
+
+                $.fn.dataTable.ext.type.order[conf.name + '-asc'] = function (a, b) {
+                    return conf.asc(a, b, true);
+                };
+                $.fn.dataTable.ext.type.order[conf.name + '-desc'] = function (a, b) {
+                    return conf.asc(a, b, true);
+                };
+
+                return conf.name;
+            };
+
+
+        }));
+
+
+
+        $(document).ready(function () {
+            var type = $.fn.dataTable.absoluteOrder([
+                { value: 'Bruno Nash', always: 'top' }
+            ]);
+
+            var type2 = $.fn.dataTable.absoluteOrderNumber([
+                { value: 'N/A', always: 'top' }
+            ]);
+
+            $('#example').DataTable({
+                columnDefs: [
+                    { type: type, targets: 0 },
+                    { type: type2, targets: 3 },
+                    { "className": "dt-center", "targets": "_all" }
+                ],
+                "scrollX": true
+            });
+        });
+    </script>
+
+    <script src="~/script/bootstrap/js/jquery.validate.js"></script>
+    <script src="~/script/bootstrap/js/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Script/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Script/bootstrap/js/jquery.easing.min.js"></script>
+    <script src="~/Script/bootstrap/js/wow.min.js"></script>
+
+    <script src="~/Script/bootstrap/js/jquery.scrollTo.js"></script>
+    <script src="~/Script/bootstrap/js/jquery.appear.js"></script>
+    <script src="~/Script/bootstrap/js/stellar.js"></script>
+    <script src="~/Script/bootstrap/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="~/Script/bootstrap/js/owl.carousel.min.js"></script>
+    <script src="~/Script/bootstrap/js/nivo-lightbox.min.js"></script>
+
+    @*<script src="~/Script/bootstrap/js/custom.js"></script>*@
+
+
+    <!-- Core JavaScript Files -->
+    @* <script src="js/jquery.min.js"></script>	 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/nivo-lightbox.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="contactform/contactform.js"></script>*@
+</body>
+</html>

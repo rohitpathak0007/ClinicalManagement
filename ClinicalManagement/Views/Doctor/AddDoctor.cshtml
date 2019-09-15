@@ -1,0 +1,202 @@
+﻿@{
+    Layout = "~/Views/Shared/Customer_Layout.cshtml";
+}
+
+@model Model.DoctorModel
+<link href="~/Script/DateTime/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnBack').click(function () {
+            $('#frmHome').submit();
+        });
+
+        //$('#btnUpdate').click(function () {
+        //    $('#frmUpdate').submit();
+        //});
+
+    });
+
+</script>
+<form method="post" action="~/Doctor/Index" id="frmHome"></form>
+<div>
+    <div class="fl col-md-12">
+        <div class="portlet-body">
+
+            <h3 class="page-title">Edit Doctor</h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<br />
+<div class="clearfix"></div>
+
+@using (Html.BeginForm("AddDoctor", "Doctor", FormMethod.Post))
+{ 
+<div class="row">
+    <div class="col-sm-12">
+        <div id="dvSccessFail">
+            @Html.Partial("_SuccessFail")
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="" class="row clearfix">
+                    
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">First Name</label>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control"})
+                           <span style="color: red"> @Html.ValidationMessageFor(m=> m.FirstName,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Last Name</label>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.LastName,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Gender</label>
+                           @Html.DropDownListFor(m => m.Gender, new List<SelectListItem> {new SelectListItem{Value="1" , Text="Male"} ,
+                           new SelectListItem{Value="0",Text="Female"}},"--Select--", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Age</label>
+                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control"})
+                           <span style="color: red">  @Html.ValidationMessageFor(m=> m.Age,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                   
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Email ID</label>
+                            @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.EmailId,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Contact No</label>
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control"})
+                           <span style="color: red">  @Html.ValidationMessageFor(m=> m.PhoneNumber,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Descriptions</label>
+                            @Html.TextBoxFor(m => m.AboutDoctor, new { @class = "form-control"})
+                          <span style="color: red">   @Html.ValidationMessageFor(m=> m.AboutDoctor,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">From Time</label>
+                            @Html.TextBoxFor(m => m.FrmTime, new { @class = "form-control input-append date form_time" ,@readonly="true" })
+                          <span style="color: red">   @Html.ValidationMessageFor(m=> m.FrmTime,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">To Time</label>
+                            @Html.TextBoxFor(m => m.ToTime, new { @class = "form-control input-append date form_time" ,@readonly="true" })
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.ToTime,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">User Name</label>
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.Username,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">User Code</label>
+                            @Html.TextBoxFor(m => m.UserCode, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.UserCode,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Date of Birth</label>
+                           @Html.TextBoxFor(m => m.DOB, new { @class = "form-control input-append date form_date" ,@id="DOB",@readonly="true" })
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.DOB,null,new{ @class = "valMsgForFName" } )</span>
+                             
+                        </div>
+                    </div>
+                     <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Address</label>
+                            @Html.TextAreaFor(m => m.Address, new { @class = "form-control"})
+                           <span style="color: red">  @Html.ValidationMessageFor(m=> m.Address,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Degree</label>
+                            @Html.DropDownListFor(m => m.Degree, ViewBag.Degree as SelectList, new {@class = "form-control" })
+                            @*@Html.TextBoxFor(m => m.Degree, new { @class = "form-control"})*@
+                             
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="required">Password</label>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control"})
+                            <span style="color: red"> @Html.ValidationMessageFor(m=> m.Password,null,new { @class = "valMsgForFName" })</span>
+                        </div>
+                    </div>
+                </div>
+                <br />
+               <table>
+                        <tr>
+                            <td>
+                                <a id="btnBack" class="btn btn-skin btn-block">Back</a>
+                            </td>
+                            <td width="2%"></td>
+                            <td>
+                                <input type="submit" value="Save" id="btnUpdate" class="btn btn-skin btn-block" />
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+<script src="~/Script/DateTime/bootstrap-datetimepicker.js"></script>
+
+<script src="~/Script/DateTime/bootstrap-datetimepicker.fr.js"></script>
+<script type="text/javascript">
+   
+    $("#DOB").datetimepicker({
+        format: "dd MM yyyy",
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+
+    $('.form_time').datetimepicker({
+        format: "hh:mm",
+        language: 'fr',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+    </script>

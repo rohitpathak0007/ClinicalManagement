@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/Exception_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #e5e5e5;
+    }
+
+    .breadcrumb {
+        background-color: #e5e5e5;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+</style>
+<br />
+<br />
+<br />
+<div class="container" data-unhandle="@Url.Action("Exception", "Common")">
+    <div>
+        <div id="paging_container4">
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            Technical Failure
+                        </div>
+                        <div class="panel-body">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <h4>We were not able to complete your request due to a system error. As a result, no action has been taken, Please contact customer support for further assistance.</h4>
+                                    @Html.ActionLink("Go back to application", "Index", "Customer")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

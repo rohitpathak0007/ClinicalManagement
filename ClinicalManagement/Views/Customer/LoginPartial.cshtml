@@ -1,0 +1,30 @@
+﻿    @model Model.UserModel
+<section>
+    @using (Html.BeginForm("Login", "Customer", FormMethod.Post))
+    {
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1>Login to Your Account</h1>
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            @Html.TextBoxFor(x => x.UserCode, new { @class = "form-control input-md", @placeholder = "Usercode" })
+                            <span style="color: red">@Html.ValidationMessageFor(x => x.UserCode, null, new { @class = "valMsgForFName" })</span>
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(x => x.Password, new { @class = "form-control input-md", @placeholder = "Password" })
+                            <span style="color: red">@Html.ValidationMessageFor(x => x.Password, null, new { @class = "valMsgForFName" })</span>
+                        </div>
+
+                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                    </form>
+                    <div class="login-help">
+                        <span style="color: red">* For office use only</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+</section>

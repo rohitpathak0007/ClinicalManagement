@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/Exception_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #e5e5e5;
+    }
+
+    .breadcrumb {
+        background-color: #e5e5e5;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+</style>
+<div class="container" data-unhandle="@Url.Action("XSS", "Common")">
+    <div>
+        <div id="paging_container4">
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            
+                        </div>
+                        <div class="panel-body">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                   <h5>Sorry the request cannot be processed. Please contact Admin.</h5>
+                                    <!--<a href="@Url.Action("Index", "Login")">Click here to back to login page</a>-->
+                                    @Html.ActionLink("Go back to application", "Index", "Customer")
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

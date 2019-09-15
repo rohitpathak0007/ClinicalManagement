@@ -1,0 +1,128 @@
+﻿@{
+    Layout = "~/Views/Shared/Customer_Layout.cshtml";
+}
+
+@model List<Model.CustomerModel>
+
+<script type="text/javascript">
+    var ID;
+    function Delete(id) {
+        ID = id;
+    };
+    $(document).ready(function () {
+        $('#btnYes').click(function () {
+            if (ID != 'undefined') {
+                $('#hdnID').val(ID);
+                $('#frmDelete').submit();
+            }
+        });
+        $('#btnNo').click(function () {
+            document.getElementById("delete-modal").style.display = "none";
+        });
+    })
+</script>
+
+<style>
+    #example .td {
+        text-align: center;
+    }
+</style>
+<form action="/Home/DeleteData" id="frmDelete" method="post">
+    @Html.Hidden("hdnID")
+</form>
+<div>
+    <div class="fl col-md-12">
+        <div class="portlet-body">
+
+            <h3 class="page-title">Paitent Appointment</h3>
+            <br />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<br />
+
+<div class="fl col-md-1">
+    
+    <div class="portlet-body">
+
+        <a href="/Home/AddCustomer" class="btn btn-skin btn-block">ADD</a>
+        <br />
+    </div>
+</div>
+<br />
+<div class="clearfix"></div>
+<br />
+<div class="col-xs-push-11">
+    @Html.Partial("_SuccessFail")
+    <div class="panel-body">
+        <div class="portlet light bordered">
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="portlet_tab1">
+                        <div class="portlet">
+                            <div class="box">
+                                <table class="display row-border" id="example" cellspacing="0" width="100%" align="center">
+                                    <thead>
+                                        <tr class="tblhead">
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Age</th>
+                                            <th>Time</th>
+                                            <th>Email Id</th>
+                                            <th>Contact</th>
+                                            <th>Description</th>
+                                            <th>Doctor</th>
+                                            <td>Edit</td>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td><a href="~/Home/ViewData?id=@item.AppointmentID&strType=View">@item.FirstName @item.LastName</a></td>
+                                                <td>@item.Gender</td>
+                                                <td>@item.Age</td>
+                                                <td>@item.AppDateTime</td>
+                                                <td>@item.EmailId</td>
+                                                <td>@item.PhoneNumber</td>
+                                                <td>@item.Descriptions</td>
+                                                <td>@item.Doctor.FirstName</td>
+                                                <td><a href="/Home/ViewData?id=@item.AppointmentID&strType=Edit"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                <td><a href="#" data-toggle="modal" data-target="#delete-modal" onclick="Delete(@item.AppointmentID)" ><span class="glyphicon glyphicon-trash"></span></a></td>
+                                            </tr> 
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;" title="Confirmation" style="width: 50%">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            These items will be permanently deleted and cannot be recovered.<br />
+            Are you sure?
+            <br />
+            <div class="pull-right">
+                <table>
+                    <tr>
+                        <td>
+                            <a id="btnYes" class="btn btn-skin btn-block">Yes</a>
+                        </td>
+                        <td width="2%"></td>
+                        <td>
+                            <a id="btnNo" class="btn btn-skin btn-block">No</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
